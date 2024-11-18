@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 // An asyncronous function that loads the text file into a variable and returns the varilable.
-async function loadFile(dataSetPath) {
+const loadFile = async (dataSetPath) => {
   // Resolve the file path
   const filePath = path.resolve(dataSetPath);
   // Load file into the text variable
@@ -12,7 +12,7 @@ async function loadFile(dataSetPath) {
 }
 
 // A function that takes in a text file and returns an array with the text file split on every word.
-function returnWordsArr(text) {
+const returnWordsArr = (text) => {
   // Split the text on every new line or every carriage return using a regular expression
   const sentencesArr = text.split(/\r?\n/);
   // console.log(sentences);
@@ -24,7 +24,7 @@ function returnWordsArr(text) {
 }
 
 // Create a mapping of words to the possible next words with their frequencies in an dictionary/object.
-function buildMatrix(words) {
+const buildMatrix = (words) => {
   // Create an empty dictionary to be returned
   let matrix = {};
   // loop through the given array with a for loop.
@@ -48,12 +48,11 @@ function buildMatrix(words) {
       };
     }
   }
-
   return matrix;
 }
 
 //  Main execution of the code. Required in order to use async functions
-async function main() {
+const main = async () => {
   try {
     // create a varilable to store the file path to the data we want to use
     const dataSet = '../data/vivian.txt';
