@@ -1,0 +1,25 @@
+{
+  "name": "mixedmessages",
+  "version": "1.0.0",
+  "description": "This project is an assignment from CodeCademy where I am to create a random message generator. I will be utilizing a Markov Chain in this project to assist in readability of the randomly generated sentences.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TBD"
+  },
+  "keywords": [
+    "markov",
+    "chain",
+    "mixed",
+    "messages",
+    "randomly",
+    "generated",
+    "message",
+    "generator"
+  ],
+  "author": "Jamelle Messinger",
+  "license": "MIT"
+}

@@ -1,0 +1,34 @@
+# Mixed Messages with Markov
+## Project Objectives:
++ Build a message generator program using Javascript
++ Use git version control
++ Use command line
++ Develop locally on your computer
+
+## Project Tasks:
+### Plan your project
++ Visualize the end result
+  Generate random messages from a large dataset that utilizes a Markov Chain to keep messages somewhat coherent
++ What is it built with?
+  Javascript
++ What can it do?
+  Once the function is invoked, generate a variably lengthed sentence that uses a Markov Chain in order to make sentences coherent
++ Does it satisfy all the project objectives?
+  TBD
++ Timeline:
+  1 week, start project officially on Monday, November 18th, 2024.
++ Boundaries:
+  Build the Markov Chain algorithims
+  Find one large dataset
+  Generate the message
+  Project complete. Can always add to and improve later.
+
+### Come up with a topic:
++ Topic:
+  Randomly generated messages based on a large dataset using a Markov Chain
+
+### Create a script and run it locally
++ Task: **completed**
+  Had to run npm init, npm install, rearange the directory folders because js folder was inside of data folder, had to change directories into the js folder and then was successfully able to run the basic script, console.log("hello") to verify functionality.
+
+###
