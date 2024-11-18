@@ -9,7 +9,7 @@ const loadFile = async (dataSetPath) => {
   const text = await fs.readFile(filePath, 'utf8');
   // Return the text file
   return text;
-}
+};
 
 // A function that takes in a text file and returns an array with the text file split on every word.
 const returnWordsArr = (text) => {
@@ -18,10 +18,12 @@ const returnWordsArr = (text) => {
   // console.log(sentences);
   // Split each sentence on every space character and combine every array created into one array using .flat()
   let wordsArr = sentencesArr.map((sentence) => sentence.split(' ')).flat();
+  // Make all words lowercase
   wordsArr = wordsArr.map((word) => word.toLowerCase());
-  // console.log(words);
+  //remove all '.' characters and replace them with an empty string.
+  wordsArr = wordsArr.map((word) => word.replace('.', ''));
   return wordsArr;
-}
+};
 
 // Create a mapping of words to the possible next words with their frequencies in an dictionary/object.
 const buildMatrix = (words) => {
@@ -49,21 +51,46 @@ const buildMatrix = (words) => {
     }
   }
   return matrix;
-}
+};
+
+// return the matrix object where the next word frequencies have been normalized
+const normalizeFrequencies = (matrixObj) => {
+  // set the value of each key in the matrix object to an index in an array stored and then store it in the variable matrixValues
+  const matrixValues = Object.values(matrixObj);
+  //iterate over every object (each index) in matrixValues
+  for (let obj of matrixValues) {
+    // initialize the a count variable that we will use to normalize all the frequencies
+    let totalCount = 0;
+    //for every value (every word), in each object
+    for (let objValue in obj) {
+      //add the freqency of every value (word) to the total count variable.
+      totalCount += obj[objValue];
+    }
+    //for every value (every word), in each object
+    for (let objValue in obj) {
+      //set the freqency of each value (word) to the normalized value by dividing the current freqency by the total freqency in the obj
+      obj[objValue] = obj[objValue] / totalCount;
+    }
+  }
+  //return the original matrix that now has normalized frequencies.
+  return matrixObj;
+};
 
 //  Main execution of the code. Required in order to use async functions
 const main = async () => {
   try {
     // create a varilable to store the file path to the data we want to use
-    const dataSet = '../data/vivian.txt';
+    const dataSet = '../data/testSet.txt';
     // create a variable to store the array of words from the data and use await keyword in order to wait for data to load.
     const wordsArr = returnWordsArr(await loadFile(dataSet));
-    // console.log(wordsArr);
+    // create a variable to store the matrix
     const matrix = buildMatrix(wordsArr);
-    console.log(matrix);
+    // console.log(matrix);
+    const normalizedMatrix = normalizeFrequencies(matrix);
+    console.log(normalizedMatrix);
   } catch (error) {
     console.error('An error occurred in main:', error);
   }
-}
+};
 
 main();
