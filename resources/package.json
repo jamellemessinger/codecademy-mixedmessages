@@ -21,5 +21,6 @@
     "generator"
   ],
   "author": "Jamelle Messinger",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module"
 }
