@@ -31,4 +31,9 @@
 + Task: **completed**
   Had to run npm init, npm install, rearange the directory folders because js folder was inside of data folder, had to change directories into the js folder and then was successfully able to run the basic script, console.log("hello") to verify functionality.
 
-###
+### Set up version control
++ initialized git repo in MixedMessages folder. Made first commit.
+
+### Store message components
++ How will these components be stored?
+  Objects, arrays. More detial TBD.
