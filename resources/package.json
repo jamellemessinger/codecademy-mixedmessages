@@ -1,5 +1,5 @@
 {
-  "name": "mixedmessages",
+  "name": "mixedmessagesmarkovchain",
   "version": "1.0.0",
   "description": "This project is an assignment from CodeCademy where I am to create a random message generator. I will be utilizing a Markov Chain in this project to assist in readability of the randomly generated sentences.",
   "main": "index.js",
